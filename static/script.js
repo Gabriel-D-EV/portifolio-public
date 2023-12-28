@@ -66,3 +66,4 @@ setTimeout(() =>{
     document.querySelector('#alerta').style.display = 'none';
 
 }, 2000)
+

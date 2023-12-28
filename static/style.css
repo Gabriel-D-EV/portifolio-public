@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
-    --cor-bk: #0a0310;
+    --cor-bk: #200836;
     --cor-gr: #808080;
     --cor-pp: #49007e;
     --cor-pk: #ff005b;
@@ -21,16 +21,13 @@ html, body {
     width: 100%;
 }
 
-p, span{
-    font-family: Ubuntu;
-    font-weight: bold;
-}
-
-section#habilidades p {
-    text-align: center;
+section#habilidades ul li{
+    font-size: 1.7rem;
+    margin-top: 15px;
 }
 
 h2 {
+    margin-bottom: 40px;
     font-size: 2em;
 }
 
@@ -41,8 +38,8 @@ h2 {
     bottom: 0;
     background: var(--cor-pp);
     overflow-y: auto;
-    width: 300px;
-    transition: all ease-in-out 0.5s;
+    width: 250px;
+    transition: all ease-in-out 0.3s;
     padding: 0 15px ;
     z-index: 9998;
     box-shadow: -10px -5px 30px rgba(0, 0, 0, 0.87);
@@ -52,10 +49,7 @@ h2 {
 .header .profile img {
     margin: 10px auto;
     display: block;
-    width: 170px;
-    border: 7px solid var(--cor-og);
-    border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.377) 4px 4px 10px;
+    width: 150px;
 }  
 
 .header .profile h1 {
@@ -74,15 +68,15 @@ h2 {
     color: white;
     background: var(--cor-pp);
     padding: 0.8rem;
-    margin-right: 0.8rem;
-    border-radius: 10px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
     transition: 0.5s;
     text-decoration: none;
 } 
 
 .header .profile .redes a:hover {
     background: var(--cor-pk);
-    
+    color: var(--cor-bk);
 }
 
 .menu {
@@ -122,7 +116,7 @@ h2 {
 .menu li:hover > a {
     text-decoration: none;
     color: var(--cor-pk);
-    transform: scale(1.25, 1.25);
+    transform: scale(1.2, 1.2);
 }
 
 .menu a:hover i,
@@ -133,17 +127,17 @@ h2 {
 }
 
 .main {
-    margin-right: 300px;
-    background-color: rgba(77, 77, 77, 0.26);
-    
+    margin-right: 250px;
+    background-color: var(--cor-bk);
+        
 }
 
 section#inicio {
-    background-image: url(../static/arquivos/bg-ini.jpg);
+    background-image: url(../static/arquivos/bg-ini.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: auto;
+    background-position: center;
     width: 100%;
     height: 100vh;
     transition: all ease-in-out 0.5s;
@@ -151,12 +145,13 @@ section#inicio {
 
 section#inicio h2 {
     font-size: 6rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    text-align: center;
 }
 
 section#inicio span#subtitle {
     margin-right: 8rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
 }
 
@@ -168,6 +163,67 @@ section#inicio div#arraste {
     width: 15rem;
 }
 
+.txt-animado {
+    font-weight: 300;
+
+}
+
+.txt-animado span {
+    position: relative;
+}
+
+.txt-animado span::before {
+    content: "";
+    color: var(--cor-pk);
+    animation: palavras 20s infinite;
+    font-size: 2em;
+}
+
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid var(--cor-pk);
+    right: -10px;
+    animation: cursor .8s infinite, digita 20s steps(20) infinite;
+    width: calc(100% + 15px);
+    background-color: #090909;
+
+}
+
+@keyframes digita {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95% {
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85% {
+        width: calc(100% + 15px);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 2px solid #090909;
+    }
+}
+
+@keyframes palavras {
+    0%,20% {
+        content: "Developer Fullstack";
+    }
+    21%,40%{
+        content: "Developer Back-End";
+    }
+    41%,60%{
+        content: "< > Bora Codar </> "
+    }
+    61%,80% {
+        content: "Gamer e Streamer";
+    }
+    81%,100% {
+        content: "Me segue nas Redes";
+    }
+}
+
 section#inicio div#arraste a {
     text-decoration: none;
     color: white;
@@ -176,7 +232,7 @@ section#inicio div#arraste a {
 i.menu-ham {
     position: fixed;
     padding: 5px;
-    color: var(--cor-pk);
+    color: white;
     background-color: rgba(0, 0, 0, 0.13);
     right: 1rem;
     top: 1rem;
@@ -184,8 +240,8 @@ i.menu-ham {
     border-radius: 50%;
     cursor: pointer;
     z-index: 15;
-    width: 45;
-    height: 45;
+    width: 50;
+    height: 50;
     display: none;
     justify-content: center;
     align-items: center;
@@ -199,8 +255,6 @@ i.menu-ham {
     left: 0;
 }
 
-
-
 /*
 MediaQueries
 
@@ -212,15 +266,14 @@ tv: 1200px+
 
 */
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
     .header {
         right: -300px;
-        transition: .5s;
+        transition: .3s;
         
     }
 
-    i.menu-ham {
-        
+    i.menu-ham { 
         right: 1rem;
         top: 1rem;
         border-radius: 50%; 
@@ -228,12 +281,12 @@ tv: 1200px+
     }
 
     section#inicio h2 {
-        font-size: 4rem;
-        
+        font-size: 3rem;
+        text-align: center;
     }
     
     section#inicio span#subtitle {
-        font-size: 1rem;
+        font-size: .8rem;
         margin-right: 0;
     
     }
@@ -259,25 +312,65 @@ tv: 1200px+
     border-radius: 10px;
 }
 
-.foto {
-    border: 5px solid var(--cor-pk);
-    border-radius: 50%;
-    
-}
-
 .section-bg {
     background-image: url(../static/arquivos/triom.png);
     color: white;
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+   
+}
+
+.cv {
+    color: white;
+}
+ 
+#sobre {
+    color: white;
+}
+
+#sobre img {
+    border-radius: 50%;
+    border: 15px double var(--cor-bg);
+    animation: mover 3s infinite;
+    margin: 20px;
+}
+
+@keyframes mover {
+    0% {
+        transform: translate(-65px, -65px);
+    }
+    25% {
+        transform: translate(25px, -65px);
+    }
+    50% {
+        transform: translate(25px, 25px);
+    }
+    75% {
+        transform: translate(-65px, 25px);
+    }
+    100% {
+        transform: translate(-65px, -65px);
+    }
+}
+  
+  
+
+
+.list-group-item {
+    color: white;
+}
+
+#contato {
+    color: white;
 }
 
 .cv .cv-title {
     font-weight: 700;
     margin-top: 20px;
     margin-bottom: 20px;
-    color: var(--cor-bk);
+    color: white;
 }
 
 .cv .cv-item {
@@ -368,7 +461,7 @@ animações
     position: fixed;
     z-index: 10;
     top: 30px;
-    right: 30px;
+    left: 30px;
 }
 
 #footer {
@@ -378,27 +471,77 @@ animações
     position: fixed;
     right: 0;
     bottom: 0;
-    width: 300px;
+    width: 250px;
     z-index: 9999;
     background-color: var(--cor-pp);
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.3s;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
     #footer{
         position: static;
         width: auto;
         padding: 7px 10px ;
         transition: .5s;
-        right: -300px;
+        right: -250px;
     }
 }
 
+.card {
+    height: 550px;
+    width: auto;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.678);
+    border: 7px ridge var(--cor-bg);
+}
+
+#portifolio .card:hover {
+    transform: scale(1.06, 1.06);
+}
+
+.card a i {
+    color: black;
+}
+
+.list-group-item {
+    background-color: rgba(77, 77, 77, 0);
+}
+
+.ss-li {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+div .link {
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.botao-cv a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background: var(--cor-pk);
+    border-radius: 5px;
+    transition: all .1s ease-in-out;
+}
+.btn:hover{
+    background: var(--cor-pp);
+    transform: scale(1.1, 1.1);
+}
+
 .skill-set {
+    transform: scale(1.4, 1.4);
     position: relative;
     border-radius: 50%;
     display: inline-block;
-    margin: 20px;
+    margin: 50px;
     align-items: center;
     margin-bottom: 10px;
     transition: all ease-in-out 0.3s;
@@ -418,44 +561,46 @@ animações
     z-index: -1;
 }
 
-
 .h3-skill {
     padding: 20px;
     
 }
 
 .skill-set:hover {
-  transform: scale(1.6, 1.6);
-  box-shadow: 2px 10px 20px var(--cor-pk);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.438);
+    animation: mover-skill 1s infinite;
+    transition: 1s;
 }
+
+@keyframes mover-skill {
+    
+    0% {
+      transform: matrix(2, 0, 0, 2, 0, 0);
+    }
+    25% {
+      transform: matrix(2, 0, 0, 2, 25, 0);
+    }
+    50% {
+      transform: matrix(2, 0, 0, 2, 25, 25);
+    }
+    75% {
+      transform: matrix(2, 0, 0, 2, 0, 25);
+    }
+    100% {
+      transform: matrix(2, 0, 0, 2, 0, 0);
+    }
+  }
+
+
 .skill-set img {
     text-align: center;
     border-radius: 50%;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.438);
-    
+    border: 6px double var(--cor-pk);
 }
 
-.card {
-    height: 550px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.678);;
-}
-
-.list-group-item {
-    background-color: rgba(77, 77, 77, 0);
-}
-
-.ss-li {
-    font-size: 1.4em;
-    font-weight: bold;
-}
-
-div .link {
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
-
-.card a i {
-    color: black;
+.ss-li li:hover {
+    color: #ff005b;
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
 }

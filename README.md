@@ -14,7 +14,7 @@ Atenciosamente,
 Gabriel Silva
 
 
-<img src="https://github.com/Gabriel-D-EV/portifolio/blob/main/static/arquivos/portifolio.png?raw=true" width="60%" height="auto">
+<img src="https://github.com/Gabriel-D-EV/portifolio/blob/main/api/static/arquivos/portifolio.png?raw=true" width="60%" height="auto">
 
 <img src="https://github.com/Gabriel-D-EV/portifolio/blob/main/static/arquivos/portifolio-cel.png?raw=true" width="40%" height="auto">
 

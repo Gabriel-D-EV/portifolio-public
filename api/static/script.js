@@ -1,41 +1,12 @@
 /* menu mobile */
 
-const ham = document.querySelector(".menu-ham");
+const ham = document.querySelector(".hamb");
 const body = document.querySelector("body");
-
-/* 
-? = if
-: = else
-*/
-ham.addEventListener("click", () => {
-    ham.classList.contains("bi-list")
-    ? ham.classList.replace("bi-list", "bi-x")
-    : ham.classList.replace("bi-x", "bi-list");
-    body.classList.toggle("menu-active");
-})
-
-/*
-Fecha o menu quando clica em alguma list
-*/
-
-const nav = document.querySelectorAll(".nav-item");
-
-nav.forEach(item => {
-    item.addEventListener("click", () => {
-        if (body.classList.contains("menu-active")) {
-            body.classList.remove("menu-active")
-            ham.classList.replace("bi-x", "bi-list");
-        }
-    })   
-})
+const nav = document.querySelector(".nav");
 
 
+//Animação
 
-
-
-/*
-Animação
-*/
 
 const observer = new IntersectionObserver((ent) => {
     ent.forEach((entry) => {
@@ -52,8 +23,6 @@ const elements = document.querySelectorAll('.hidden')
 elements.forEach((element) => observer.observe(element))
 
 
-//botao enviar email
-
 const btnE = document.querySelector('#btn-')
 const btnL = document.querySelector('#btn-loading')
 
@@ -66,4 +35,20 @@ setTimeout(() =>{
     document.querySelector('#alerta').style.display = 'none';
 
 }, 2000)
+
+window.addEventListener('scroll', function() {
+    let header = document.querySelector("#header")
+    header.classList.toggle("newheader",window.scrollY > 100)
+})
+
+ham.addEventListener("click", () => nav.classList.toggle("active"));
+
+const navlink = document.querySelector(".nav-list")
+
+
+navlink.addEventListener("click", () => {
+    if (nav.classList.contains("active")) {
+        nav.classList.remove("active");
+    } else { nav.classList.add("active"); }
+})
 
